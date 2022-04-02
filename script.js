@@ -44,15 +44,18 @@ createBusinessSizeOptions();
 
 //create function to generate radio options 
 function createImportantSolutionOptions() {
-    importantSolutionOptions.forEach((option, i) => {
+    importantSolutionOptions.forEach(option => {
         let optionElement = document.createElement('input');
         let labelElement = document.createElement('label');
+        let divElement = document.createElement('div');
         labelElement.innerText = option;
         optionElement.type = 'radio';
-        optionElement.name = option;
+        optionElement.name = 'important-solution-radio';
         optionElement.value = option;
-        document.getElementById('important-solution').appendChild(labelElement);
-        labelElement.appendChild(optionElement);
+        const importantSolutionContainer = document.getElementById('important-solution');
+        importantSolutionContainer.appendChild(divElement);
+        divElement.appendChild(optionElement);
+        divElement.appendChild(labelElement);
     })
 }
 createImportantSolutionOptions();
