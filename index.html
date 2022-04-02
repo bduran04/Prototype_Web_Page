@@ -26,44 +26,25 @@
         </div>
         <div class="email-input">
             <label for="email">Business Email:</label>
-            <input type="text" placeholder="Enter your Business Email" size="40"/>
+            <input type="email" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" onkeyup="updateEmail(event)"
+                placeholder="Enter your Business Email" />
         </div>
         <div class="business-size">
             <label for="business-size">Business Size: </label>
-            <select name="size">
-                <option value="1-10">1-10</option>
-                <option value="11-50">11-50</option>
-                <option value="51-100">51-100</option>
-                <option value="101-250">101-250</option>
-                <option value="250-1000">250-1000</option>
-                <option value="1000+">1000+</option>
+            <select id="business-size-select" name="size">
+                <!-- script generated options, refer to createBusinessSizeOptions() -->
             </select>
         </div>
-        <form>
-            <p>What is the most important thing to you in a solution?</p>
-            <input type="radio" id="option1" name="option" value="real-time-analytics">
-            <label for="option1">Real-time Analytics</label><br>
-            <input type="radio" id="option2" name="option" value="query-response-time">
-            <label for="option2">Query Response Time</label><br>
-            <input type="radio" id="option3" name="option" value="high-concurrency">
-            <label for="option3">High Concurrency</label><br>
-            <input type="radio" id="option4" name="option" value="fast-data-ingest">
-            <label for="option4">Fast Data Ingest</label><br>
-            <input type="radio" id="option5" name="option" value="scalability">
-            <label for="option5">Scalability</label><br>
-            <input type="radio" id="option6" name="option" value="document-storage">
-            <label for="option6">Document Storage</label><br>
-            <input type="radio" id="option7" name="option" value="full-text-search">
-            <label for="option7">Full Text Search</label><br>
-            <input type="radio" id="option8" name="option" value="price">
-            <label for="option8">Price</label><br>
-            <button type="submit" value="submit">
-                <link href="">
-                Continue To Schedule a Time
-                <i class="fa-solid fa-arrow-right"></i>
-                </link>
-            </button>
-        </form>
+        <p>What is the most important thing to you in a solution?</p>
+        <div class="grid" id="important-solution">
+            <!-- create these as a for loop -->
+        </div>
+        <button onclick="saveForm()">Button
+            <!-- <link href="">
+            Continue To Schedule a Time
+            <i class="fa-solid fa-arrow-right"></i>
+            </link> -->
+        </button>
     </div>
     <script src="script.js"></script>
 </body>
