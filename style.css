@@ -7,6 +7,18 @@ body {
 
 .header {
     text-align: center;
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+}
+
+.icon-container {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    background-color: #fbebfc;
+    display: grid;
+    align-content: center;
 }
 
 .instructions {
@@ -40,8 +52,11 @@ input[type=email], select {
     padding: 0.625em;
     transition: .15s ease-in-out;
     transition-property: background-color;
-    width: 100%;
     margin-bottom: 2rem;
+  }
+
+  select {
+      width: 100%;
   }
 
   input[type=email].error {
@@ -56,7 +71,7 @@ input[type=email], select {
   }
 
   .button {
-    background: linear-gradient(110deg,#f0f -44%,#1e0a78 157%);
+    background:  rgb(170, 0, 255);
     border: none;
     color: #fff;
     margin-left: 0;
@@ -84,6 +99,7 @@ input[type=email], select {
     box-shadow: 0 1px 4px rgb(27 26 33 / 25%);
     filter: brightness(1.1);
     transform: translateY(-1px);
+    background: rgb(187, 51, 255);
   }
   .submit-button {
       text-align: center;

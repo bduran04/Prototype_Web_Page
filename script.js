@@ -31,9 +31,9 @@ const unqualified = {
     importantSolution: ["Document Storage", "Full Text Search", "Price"]
 }
 
+//function that generates select options for business size
 function createBusinessSizeOptions() {
     businessSizeOptions.forEach(option => {
-        //create a new option element
         let optionElement = document.createElement('option');
         optionElement.innerText = option;
         optionElement.value = option;
@@ -42,16 +42,17 @@ function createBusinessSizeOptions() {
 }
 createBusinessSizeOptions();
 
-//create function to generate radio options 
+//function that generates radio options for important solution question 
 function createImportantSolutionOptions() {
     importantSolutionOptions.forEach(option => {
-        let optionElement = document.createElement('input');
-        let labelElement = document.createElement('label');
-        let divElement = document.createElement('div');
+        const optionElement = document.createElement('input');
+        const labelElement = document.createElement('label');
+        const divElement = document.createElement('div');
         labelElement.innerText = option;
         optionElement.type = 'radio';
         optionElement.name = 'important-solution-radio';
         optionElement.value = option;
+        optionElement.onclick = function(option) {formData.importantSolution = option.target.value};
         const importantSolutionContainer = document.getElementById('important-solution');
         importantSolutionContainer.appendChild(divElement);
         divElement.appendChild(optionElement);
@@ -61,10 +62,12 @@ function createImportantSolutionOptions() {
 createImportantSolutionOptions();
 
 function saveForm() {
-    //check if form.businessSize is unqualified.businessSize or formData.importantSolution is included in unqualified.importantSolution 
-    //if true, navigate to unqualified page
-    //if false, navigate to qualified page
     formData.businessSize = document.getElementById('business-size-select').value;
+    if (formData.businessSize === unqualified.businessSize || unqualified.importantSolution.includes(formData.importantSolution)) {
+        window.location.href = 'unqualified.html';
+    } else {
+        window.location.href = 'qualified.html';
+    }
     console.log(formData);
 }
 
