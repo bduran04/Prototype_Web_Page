@@ -28,7 +28,7 @@
         </div>
         <div class="email-input">
             <label for="email">Business Email:</label>
-            <input type="email" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" onkeyup="updateEmail(event)"
+            <input type="email" id="email" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" onkeyup="updateEmail(event)"
                 placeholder="Enter your Business Email" />
         </div>
         <div class="business-size">
@@ -41,7 +41,7 @@
         <div class="grid" id="important-solution">
             <!-- script generated options, refer to createImportantSolutionOptions() -->
         </div>
-        <div class="submit-button">
+        <div class="submit-button" id="submit-button">
             <button class="button" onclick="saveForm()">Continue to Schedule a Time
                 <i class="fa-solid fa-arrow-right"></i>
             </button>

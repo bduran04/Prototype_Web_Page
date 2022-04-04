@@ -61,31 +61,33 @@ function createImportantSolutionOptions() {
 }
 createImportantSolutionOptions();
 
+//create a function that will validate the form & notifies the user for errors
+function validateForm() {
+}
+
 function saveForm() {
+    //validate form funtion call
     formData.businessSize = document.getElementById('business-size-select').value;
     if (formData.businessSize === unqualified.businessSize || unqualified.importantSolution.includes(formData.importantSolution)) {
         window.location.href = 'pages/unqualified.html';
     } else {
         window.location.href = 'pages/qualified.html';
     }
-    console.log(formData);
+}
+
+function validateEmail() {
+    if (formData.businessEmail.match(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)) {
+        document.getElementById('email').classList.remove('error');
+    } else { 
+        document.getElementById('email').classList.add('error');
+        //disable the submit button
+        document.getElementById("submit-button").disabled = true;
+    }
 }
 
 function updateEmail(event) {
-    //validate email function call
     validateEmail();
     formData.businessEmail = event.target.value;
-}
-//validate email function 
-//want to check the formData.businessEmail if it matches the regex
-//set the email input class to default 
-//if it does not match the regex, set the email input class to error
-function validateEmail() {
-    if (formData.businessEmail.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
-        document.getElementById('business-email-input').classList.remove('error');
-    } else { 
-        document.getElementById('business-email-input').classList.add('error');
-    }
 }
 
 function updateBusinessSize(size) {
