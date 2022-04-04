@@ -28,8 +28,8 @@
         </div>
         <div class="email-input">
             <label for="email">Business Email:</label>
-            <input type="email" id="email" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" onkeyup="updateEmail(event)"
-                placeholder="Enter your Business Email" />
+            <div class="error-message" id="error-message">Please make sure this isn't a personal email address.</div>
+            <input type="email" id="email" onkeyup="updateEmail(event)" placeholder="Enter your Business Email" />
         </div>
         <div class="business-size">
             <label for="business-size">Business Size: </label>

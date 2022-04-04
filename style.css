@@ -69,6 +69,22 @@ input[type=email], select {
       border: 1px solid #ff0000;
   }
 
+  .error-message.error {
+    color: #cc0033;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 5px 0 0;
+  }
+
+ .error-message {
+   display: none;
+  }
+
+  input[type=radio].error {
+      border: 1px solid #ff0000;
+  }
+
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -109,4 +125,8 @@ input[type=email], select {
   }
   .submit-button {
       text-align: center;
+  }
+
+  input[type=radio] {
+    accent-color: rgb(187, 51, 255);
   }
