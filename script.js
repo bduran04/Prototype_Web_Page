@@ -59,7 +59,30 @@ function createImportantSolutionOptions() {
 }
 createImportantSolutionOptions();
 
+function validateBusinessSize() {
+    if (formData.businessSize === "") {
+        document.getElementById("error-message2").classList.add('error')
+        document.getElementById("submit-button").disabled = true;
+    }
+}
+
+function validateImportantSolution() {
+    if (formData.importantSolution === "") {
+        document.getElementById("error-message3").classList.add('error')
+        document.getElementById("submit-button").disabled = true;
+    }
+}
+
+function enterEmail() {
+    if (formData.businessEmail === "") {
+        document.getElementById("error-message1").classList.add('error')
+        document.getElementById("submit-button").disabled = true;
+    }
+}
+
 function saveForm() {
+    validateBusinessSize();
+    validateImportantSolution();
     formData.businessSize = document.getElementById('business-size-select').value;
     formData.importantSolution = document.querySelector('input[name="important-solution-radio"]:checked').value;
     if (formData.businessSize === unqualified.businessSize || unqualified.importantSolution.includes(formData.importantSolution)) {
@@ -67,16 +90,13 @@ function saveForm() {
     } else {
         window.location.href = 'pages/qualified.html';
     }
-    if (!formData.importantSolution) {
-        document.getElementById('important-solution').classList.add('error');
-        document.getElementById("submit-button").disabled = true;
-    }
 }
 
 function validateEmail() {
     if (formData.businessEmail.match(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)) {
         document.getElementById('email').classList.remove('error');
         document.getElementById("error-message").classList.remove('error')
+        document.getElementById("email").classList.add('valid');
     } else { 
         document.getElementById('email').classList.add('error');
         document.getElementById("error-message").classList.add('error')

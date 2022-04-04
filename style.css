@@ -66,8 +66,12 @@ input[type=email], select {
   }
 
   input[type=email].error {
-      border: 1px solid #ff0000;
+      border: 2px solid #ff0000;
   }
+
+  input[type=email].valid {
+    border: 2px solid rgb(55, 152, 55);
+}
 
   .error-message.error {
     color: #cc0033;

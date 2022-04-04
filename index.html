@@ -32,12 +32,15 @@
             <input type="email" id="email" onkeyup="updateEmail(event)" placeholder="Enter your Business Email" />
         </div>
         <div class="business-size">
-            <label for="business-size">Business Size: </label>
+            <label for="business-size">Business Size:</label>
+            <div class="error-message" id="error-message2">Please select the business size.</div>
             <select id="business-size-select" name="size">
+                <option value="0">Select Size</option>
                 <!-- script generated options, refer to createBusinessSizeOptions() -->
             </select>
         </div>
         <p>What is the most important thing to you in a solution?</p>
+        <div class="error-message" id="error-message3">Please select the most important solution.</div>
         <div class="grid" id="important-solution">
             <!-- script generated options, refer to createImportantSolutionOptions() -->
         </div>
